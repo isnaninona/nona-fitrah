@@ -16,8 +16,9 @@ use App\Http\Controllers\{UserController,
     AnswerController,
     ProfilController,
     NilaiController,
-    CacheController
+    CacheController,
 };
+use App\Http\Controllers\MaterialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,4 +77,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('nilai',NilaiController::class);
 
     Route::resource('clear-cache', CacheController::class);
+
+    Route::resource('materis', MaterialController::class);
+
 });

@@ -21,6 +21,13 @@
                     </a>
 
                 </li>
+                <li class="sidebar-item {{ $page == 'materis' ? 'active' : '' }} ">
+                    <a href="materis" class='sidebar-link'>
+                        <i data-feather="home" width="20"></i>
+                        <span>Materi</span>
+                    </a>
+
+                </li>
 
 
 
