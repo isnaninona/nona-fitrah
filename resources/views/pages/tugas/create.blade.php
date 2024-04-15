@@ -4,11 +4,11 @@
 <div class="main-content container-fluid">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Upload Materi Baru</h2>
+            <h2>Upload Tugas Baru</h2>
             <p>{{-- $kelas --}}</p>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('materis.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('tugas.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -24,20 +24,26 @@
 </div>
 @endif
 
-<form action="{{ route('materis.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('tugas.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="row mx-2">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Judul:</strong>
-                <input type="text" name="judul" class="form-control" placeholder="Judul">
+                <input type="text" name="judul_tugas" class="form-control" placeholder="Judul">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Deskripsi:</strong>
-                <textarea class="form-control" style="height:150px" name="deskripsi" placeholder="Deskripsi"></textarea>
+                <textarea class="form-control" style="height:150px" name="deskripsi_tugas" placeholder="Deskripsi"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Deadline:</strong>
+                <input type="datetime-local" name="deadline" class="form-control" placeholder="deadline">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -64,8 +70,8 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>File Materi:</strong>
-                <input type="file" name="file_materi" class="form-control">
+                <strong>File Tugas:</strong>
+                <input type="file" name="file_tugas" class="form-control">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -4,10 +4,10 @@
 <div class="main-content container-fluid">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Daftar Materi</h2>
+            <h2>Daftar Tugas</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('materis.create') }}"> Upload Materi Baru</a>
+            <a class="btn btn-success" href="{{ route('tugas.create') }}"> Upload Tugas Baru</a>
         </div>
     </div>
 </div>
@@ -23,19 +23,25 @@
         <th>No</th>
         <th>Judul</th>
         <th>Deskripsi</th>
+        <th>Kelas</th>
+        <th>Mapel</th>
+        <th>Nama Guru</th>
         <th>Aksi</th>
     </tr>
-    @foreach ($materis as $row)
+    @foreach ($tugas as $row)
     <tr>
         <td>{{ $loop->iteration }}</td>
-        <td>{{ $row->title }}</td>
-        <td>{{ $row->description }}</td>
+        <td>{{ $row->judul_tugas }}</td>
+        <td>{{ $row->deskripsi_tugas }}</td>
+        <td>{{ $row->kelas }}</td>
+        <td>{{ $row->mapel }}</td>
+        <td>{{ $row->namaguru}}</td>
         <td>
-            <form action="{{ route('materis.destroy',$row->id) }}" method="POST">
+            <form action="{{ route('tugas.destroy',$row->id_tugas) }}" method="POST">
 
-                <a class="btn btn-info" href="{{ route('materis.show',$row->id) }}">Show</a>
+                <a class="btn btn-info" href="{{ route('tugas.show',$row->id_tugas) }}">Show</a>
 
-                <a class="btn btn-primary" href="{{ route('materis.edit',$row->id) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('tugas.edit',$row->id_tugas) }}">Edit</a>
 
                 @csrf
                 @method('DELETE')
